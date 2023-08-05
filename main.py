@@ -485,10 +485,13 @@ list_of_shrines.sort()
 shrine_url_dict = dict(zip(df['shrine'].values, df['url'].values))
 shrine_yt_dict = dict(zip(df['shrine'].values, df['Youtube'].values))
 
-shrines_selected = st.selectbox("Select shrine(s):", options = list_of_shrines)
+shrines_selected = st.selectbox("Select shrine(s):", options = ["None"] + list_of_shrines)
 if shrines_selected:
-    st.subheader(shrines_selected)
-    st.write(f"- Guide: {shrine_url_dict.get(shrines_selected)}")
-    st.write("- YouTube Walkthrough:")
-    st.video(shrine_yt_dict.get(shrines_selected))
-    st.write("----")
+    if shrines_selected == "None":
+        pass
+    else:
+        st.subheader(shrines_selected)
+        st.write(f"- Guide: {shrine_url_dict.get(shrines_selected)}")
+        st.write("- YouTube Walkthrough:")
+        st.video(shrine_yt_dict.get(shrines_selected))
+        st.write("----")
