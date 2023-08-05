@@ -487,9 +487,8 @@ shrine_yt_dict = dict(zip(df['shrine'].values, df['Youtube'].values))
 
 shrines_selected = st.selectbox("Select shrine(s):", options = list_of_shrines)
 if shrines_selected:
-    for shrine in shrines_selected:
-        st.subheader(shrine)
-        st.write(f"- Guide: {shrine_url_dict.get(shrine)}")
-        st.write("- YouTube Walkthrough:")
-        st.video(shrine_yt_dict.get(shrine))
-        st.write("----")
+    st.subheader(shrines_selected)
+    st.write(f"- Guide: {shrine_url_dict.get(shrines_selected)}")
+    st.write("- YouTube Walkthrough:")
+    st.video(shrine_yt_dict.get(shrines_selected))
+    st.write("----")
