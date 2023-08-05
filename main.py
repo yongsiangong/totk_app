@@ -485,7 +485,7 @@ list_of_shrines.sort()
 shrine_url_dict = dict(zip(df['shrine'].values, df['url'].values))
 shrine_yt_dict = dict(zip(df['shrine'].values, df['Youtube'].values))
 
-shrines_selected = st.multiselect("Select shrine(s):", options = list_of_shrines)
+shrines_selected = st.selectbox("Select shrine(s):", options = list_of_shrines)
 if shrines_selected:
     for shrine in shrines_selected:
         st.subheader(shrine)
